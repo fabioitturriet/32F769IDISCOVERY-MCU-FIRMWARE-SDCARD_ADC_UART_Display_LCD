@@ -8,6 +8,6 @@ ________________________________________________________________________________
 _____________________________________________________________________________________________________________________________________________
 
 # Vídeos explicativos (Display LCD)
-**Introdução e integração do Cube IDE com TouchGFX ->**  https://www.youtube.com/watch?v=9QDWti5RzBU
+**Introdução e integração do Cube IDE com TouchGFX ->**  https://www.youtube.com/watch?v=9QDWti5RzBU  
 **Animação de componentes mexendo direto no código ->**  https://www.youtube.com/watch?v=q4nxEP5bPIc
  
