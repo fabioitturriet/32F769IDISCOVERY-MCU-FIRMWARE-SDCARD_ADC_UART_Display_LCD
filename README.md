@@ -7,4 +7,5 @@ ________________________________________________________________________________
 
 _____________________________________________________________________________________________________________________________________________
 
-<!-- Vídeo explicativo da integração STM32CUBE IDE com TouchGFX --> https://www.youtube.com/watch?v=9QDWti5RzBU
+# Vídeos explicativos
+**Introdução e integração do Cube IDE com TouchGFX ->**  https://www.youtube.com/watch?v=9QDWti5RzBU
