@@ -9,5 +9,5 @@ ________________________________________________________________________________
 
 # Vídeos explicativos (Display LCD)
 **Introdução e integração do Cube IDE com TouchGFX ->**  https://www.youtube.com/watch?v=9QDWti5RzBU  
-**Animação de componentes mexendo direto no código ->**  https://www.youtube.com/watch?v=q4nxEP5bPIc
-**Treinamento do Chrome-ART ->** https://st-onlinetraining.s3.amazonaws.com/STM32F7-System_ChromART_DMA2D/index.html 
+**Animação de componentes mexendo direto no código ->**  https://www.youtube.com/watch?v=q4nxEP5bPIc  
+**Treinamento do Chrome-ART ->**  https://st-onlinetraining.s3.amazonaws.com/STM32F7-System_ChromART_DMA2D/index.html 
