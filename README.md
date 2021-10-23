@@ -12,3 +12,5 @@ ________________________________________________________________________________
 **Animação de componentes mexendo direto no código ->**  https://www.youtube.com/watch?v=q4nxEP5bPIc  
 **Treinamento do Chrome-ART ->**  https://st-onlinetraining.s3.amazonaws.com/STM32F7-System_ChromART_DMA2D/index.html 
 **Guia sobre gráfico dinâmico ->** https://support.touchgfx.com/docs/development/ui-development/ui-components/miscellaneous/dynamic-graph
+**Como abrir arquivo de ECG .dat no Matlab ->** https://www.mathworks.com/matlabcentral/fileexchange/49822-open_ecg-ecg-dat-file-reader
+**Descrição dos dados utilizados do PhysioNet** https://physionet.org/physiobank/database/html/mitdbdir/intro.htm
