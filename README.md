@@ -2,7 +2,7 @@
 _____________________________________________________________________________________________________________________________________________
 **Autores:** Patrick Morás e Fábio Itturriet  
 **Data:** 30/07/2021           
-**Objetivo:** Esse projeto visa a configuração da plataforma STM32F769NI utilizando alguns dispositivos como cartão de memória MicroSD, TIMER e o display LCD da plataforma. O intuito é ler um arquivo do SDcard contendo uma derivação de Eletrocardiograma, e por no gráfico mostrando tela da plataforma.                      
+**Objetivo:** Esse projeto visa a configuração da plataforma STM32F769NI utilizando alguns dispositivos como cartão de memória MicroSD, FREERTOS e o display LCD da plataforma. O intuito é ler um arquivo do SDcard contendo uma derivação de Eletrocardiograma, os dados então serão plotados em um gráfico e ficará disponivel para visualização na tela da plataforma.                      
 **IDE=** STM32CUBE IDE v.1.6.1
 
 _____________________________________________________________________________________________________________________________________________
@@ -13,4 +13,4 @@ ________________________________________________________________________________
 **Treinamento do Chrome-ART ->**  https://st-onlinetraining.s3.amazonaws.com/STM32F7-System_ChromART_DMA2D/index.html 
 **Guia sobre gráfico dinâmico ->** https://support.touchgfx.com/docs/development/ui-development/ui-components/miscellaneous/dynamic-graph
 **Como abrir arquivo de ECG .dat no Matlab ->** https://www.mathworks.com/matlabcentral/fileexchange/49822-open_ecg-ecg-dat-file-reader
-**Descrição dos dados utilizados do PhysioNet** https://physionet.org/physiobank/database/html/mitdbdir/intro.htm
+**Descrição dos dados utilizados do PhysioNet ->** https://physionet.org/physiobank/database/html/mitdbdir/intro.htm
