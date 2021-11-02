@@ -28,7 +28,7 @@ ________________________________________________________________________________
 
 # Descrição do Experimento
 
-Comece pelo documento de [integração](Integração_CubeIDE_TouchGFX.md), assumindo que foi seguido todos os passos temos um projeto criado no touchGFX e aberto no CubeIDE, no "Project Explorer" é possivel ver o arquivo .touchgfx, começaremos abrindo ele para configurar a Interface Gráfica de Usuário (GUI)
+Comece pelo [documento de integração](Integração_CubeIDE_TouchGFX.md), assumindo que foi seguido todos os passos temos um projeto criado no touchGFX e aberto no CubeIDE, no "Project Explorer" é possivel ver o arquivo .touchgfx, começaremos abrindo ele para configurar a Interface Gráfica de Usuário (GUI)
 
 ## Configuração da GUI
 
