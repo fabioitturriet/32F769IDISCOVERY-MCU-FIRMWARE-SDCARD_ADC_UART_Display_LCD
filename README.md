@@ -28,11 +28,11 @@ ________________________________________________________________________________
 
 # Descrição do Experimento
 
-O experimento tem como fonte do sinal de eletrocardiograma um banco de dados do PhysioNet, o [***MIT-BIH Arrhythmia Database Directory***](https://physionet.org/physiobank/database/html/mitdbdir/mitdbdir.htm) tem um conjunto de registros de ECG de longa duração (entorno de 30 minutos) com diferentes derivações. Nesse exemplo foi utilizado o registro 100, mais especificamente a derivação MLII que basicamente é uma Derivação II modificada, dessa derivação foi extraida com o auxilio do matlab, os 10 primeiros segundos de dados.
+O experimento tem como fonte do sinal de eletrocardiograma um banco de dados do PhysioNet, o [*MIT-BIH Arrhythmia Database Directory*](https://physionet.org/physiobank/database/html/mitdbdir/mitdbdir.htm) tem um conjunto de registros de ECG de longa duração (entorno de 30 minutos) com diferentes derivações. Nesse exemplo foi utilizado o registro 100, mais especificamente a derivação MLII que basicamente é uma Derivação II modificada, dessa derivação foi extraida com o auxilio do matlab, os 10 primeiros segundos de dados.
 
 ## Abrindo arquivos no formato .dat no Matlab
 
-A programação para abrir o arquivo .dat e visualizar os dados no gráfico é vista em [Open_ECG: ECG .dat file reader](https://www.mathworks.com/matlabcentral/fileexchange/49822-open_ecg-ecg-dat-file-reader), as principais alterações que podem ser feitas caso necessário é na função 'fread()' onde pode ser alterado a frequência (nesse caso foi utilizado os 360Hz) e em 'Time=' onde registra a janela de tempo que será plotado os dados e também extraidos na sequência. Por fim foi adicionado a função writematrix(Orig_Sig, "NomedoArquivo.txt") na linha 14 do código, esta função salva os dados plotados em um arquivo no formato .txt para ser inserido no cartão de memória posteriomente.
+A programação para abrir o arquivo .dat e visualizar os dados no gráfico é vista em [*Open_ECG: ECG .dat file reader*](https://www.mathworks.com/matlabcentral/fileexchange/49822-open_ecg-ecg-dat-file-reader), as principais alterações que podem ser feitas caso necessário é na função 'fread()' onde pode ser alterado a frequência (nesse caso foi utilizado os 360Hz) e em 'Time=' onde registra a janela de tempo que será plotado os dados e também extraidos na sequência. Por fim foi adicionado a função writematrix(Orig_Sig, "NomedoArquivo.txt") na linha 14 do código, esta função salva os dados plotados em um arquivo no formato .txt para ser inserido no cartão de memória posteriomente.
 
 ## Iniciando o projeto
 
