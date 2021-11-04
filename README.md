@@ -28,17 +28,25 @@ ________________________________________________________________________________
 
 # Descrição do Experimento
 
+O experimento tem como fonte do sinal de eletrocardiograma um banco de dados do PhysioNet, o [***MIT-BIH Arrhythmia Database Directory***](https://physionet.org/physiobank/database/html/mitdbdir/mitdbdir.htm) tem um conjunto de registros de ECG de longa duração (entorno de 30 minutos) com diferentes derivações. Nesse exemplo foi utilizado o registro 100, mais especificamente a derivação MLII que basicamente é uma Derivação II modificada, dessa derivação foi extraida com o auxilio do matlab, os 10 primeiros segundos de dados.
+
+## Abrindo arquivos no formato .dat no Matlab
+
+A programação para abrir o arquivo .dat e visualizar os dados no gráfico é vista em [Open_ECG: ECG .dat file reader](https://www.mathworks.com/matlabcentral/fileexchange/49822-open_ecg-ecg-dat-file-reader), as principais alterações que podem ser feitas caso necessário é na função 'fread()' onde pode ser alterado a frequência (nesse caso foi utilizado os 360Hz) e em 'Time=' onde registra a janela de tempo que será plotado os dados e também extraidos na sequência. Por fim foi adicionado a função writematrix(Orig_Sig, "NomedoArquivo.txt") na linha 14 do código, esta função salva os dados plotados em um arquivo no formato .txt para ser inserido no cartão de memória posteriomente.
+
+## Iniciando o projeto
+
 Comece pelo [documento de integração](Integração_CubeIDE_TouchGFX.md), assumindo que foi seguido todos os passos temos um projeto criado no touchGFX e aberto no CubeIDE, no "Project Explorer" é possivel ver o arquivo .touchgfx, começaremos abrindo ele para configurar a Interface Gráfica de Usuário (GUI)
 
 ## Configuração da GUI
 
-O principal elemento gráfico desse experimento é o gráfico dinâmico, nele que será plotado os dados de ECG, o restante dos elementos podem ser mudados conforme o  desejo do usuário, desse modo a explicação atém-se ao gráfico dinámico.
+O principal elemento gráfico desse experimento é o gráfico dinâmico, nele que será plotado os dados de ECG, o restante dos elementos podem ser mudados conforme o desejo do usuário, desse modo a explicação atém-se ao gráfico dinámico.
 
 o gráfico foi dispoto do seguinte modo
 
 figura
 
-nele foi deixado uma margem de 50 pixels a esqueda para a legendo sobrando 750 pixels para atualização de dados no gráfico (largura total da tela - margem = 800 - 50). Por questões de desempenho foi escolhido o grafico no modo de desenhar e sobrescrever. Como os dados tem frequencia de 360Hz, foi criado uma escala para transformar a legenda em segundos, 1/360 é uma dizima, logo foi arredondado para 0,0028s para cada dado.
+Nele foi deixado uma margem de 50 pixels a esqueda para a legenda sobrando 750 pixels para atualização de dados no gráfico (largura total da tela - margem = 800 - 50). Por questões de desempenho foi escolhido o grafico no modo de desenhar e sobrescrever. Como os dados tem frequencia de 360Hz, foi criado uma escala para transformar a legenda em segundos, 1/360 é uma dizima periódica, logo foi arredondado para 0,0028s e a grade tem uma marcação a cada 360 amostras subtituindo por 1 segundo.
 
 figura
 _____________________________________________________________________________________________________________________________________________
