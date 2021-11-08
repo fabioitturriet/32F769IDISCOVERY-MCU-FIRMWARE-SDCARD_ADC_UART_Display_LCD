@@ -46,9 +46,52 @@ o gráfico foi dispoto do seguinte modo
 
 figura
 
-Nele foi deixado uma margem de 50 pixels a esqueda para a legenda sobrando 750 pixels para atualização de dados no gráfico (largura total da tela - margem = 800 - 50). Por questões de desempenho foi escolhido o grafico no modo de desenhar e sobrescrever. Como os dados tem frequencia de 360Hz, foi criado uma escala para transformar a legenda em segundos, 1/360 é uma dizima periódica, logo foi arredondado para 0,0028s e a grade tem uma marcação a cada 360 amostras subtituindo por 1 segundo.
+Nele foi deixado uma margem de 50 pixels a esqueda para a legenda sobrando 750 pixels para atualização de dados no gráfico (largura total da tela - margem = 800 - 50). Por questões de desempenho foi escolhido o grafico no modo de desenhar e sobrescrever. Como os dados tem frequência de 360Hz, foi criado uma escala para transformar a legenda em segundos, 1/360 é uma dizima periódica, logo foi arredondado para 0,0028s e a grade tem uma marcação a cada 360 amostras subtituindo por 1 segundo.
 
 figura
+
+## Configuração da CubeIDE
+
+Ao gerar o código no TouchGFX pode-se fechar o programa, no CubeIDE o próximo passo é configurar alguns dispositivos e o sistema operacional FREERTOS, basta então acessar o arquivo .ioc em "Project Explorer". 
+
+No MicroSD será inserido um arquivo no formato .txt, a seguir temos a imagem do esquemático do cartão SD
+
+<img src="https://user-images.githubusercontent.com/86391684/127378718-bc18c094-0e21-479a-a403-b7812d42cfb2.png" width="400" />
+
+na parte superior do esquemático temos, além das alimentações, as linhas de comunicação com o conector, essa interface com o cartão SD é dado pelo periférico SDMMC, na parte de baixo da imagem temos o uSD_Detect, linha responsável pela detecção do MicroSD conectado ao slot, uSD_Detect esta conectado ao pino PI15 do MCU e deve ser configurado como GPIO_Input
+
+<img src="https://user-images.githubusercontent.com/86391684/127379861-4ada9714-4355-4e5c-a973-0a2765a3a742.png" width="650" />
+
+A configuração do Conector SD se dá como
+
+  1. Vá até connectivity > SDMMC2 > Mode e selecione *SD 4 bits Wide bus*
+  2. Em *configuration* clique na aba *NVIC Settings* e habilite o *SDMMC2 global interrrupt*
+
+<img src="https://user-images.githubusercontent.com/86391684/127430677-a8ef86ef-1941-403d-9603-80e9344ac993.png" width="400" />
+
+  4. Ainda em *SDMMC2 configuration* clique na aba *DMA Settings* e em *Add* e adicione TX e o RX do SDMMC2 no DMA
+
+<img src="https://user-images.githubusercontent.com/86391684/127431076-b5a8be0a-f04e-4ada-a328-5a3538c9f1e6.png" width="400" />
+
+  5. definimos então o pino PI15, de detecção do cartão SD, como entrada (GPIO_Input)
+  6. Subsequentemente vá até Middleware > FATFS > em *Mode* marque *SD card*
+  7. Em *configuration* clique na aba *Platform Settings*, em Detect_SDIO, selecione o PI15 na coluna *Found Solutions*
+
+<img src="https://user-images.githubusercontent.com/86391684/127433019-51ce4260-dd97-4f6a-807e-8b25e32cc642.png" width="800" />
+
+  8. Na guia *Advanced Settings*, habilete *Use dma template*
+
+<img src="https://user-images.githubusercontent.com/86391684/127433681-ce2c05b3-d2c0-4770-9015-576ebedb3128.png" width="400" />
+
+Em "middleware" vá em FREERTOS > Advanced settings e habilite "USE_NEWLIB_REENTRANT.
+
+figura
+
+Por fim, na aba "Clock Configuration", nela queremos abaixar o clock da interface SDMMC2, para isto foi mudada a divisão "/P" do PLL por 8 obtendo 50MHz no PLLQ, em seguida basta selecionar o  "PLL48CLK" no "SDMMC2 Clock Mux" para receber os 50MHz de frequência para a interface SDMMC2.
+
+figura arvore de clock
+
+Assim finalizamos a configuração da plataforma. Podemos então salvar o projeto e gerar o código inicial, é possivel salvar o projeto atravéz do ícone de disquete :floppy_disk: ou pelo atalho "Ctrl+S" ou pela guia File > Save.
 _____________________________________________________________________________________________________________________________________________
 
 # Materiais explicativos (Display LCD)
