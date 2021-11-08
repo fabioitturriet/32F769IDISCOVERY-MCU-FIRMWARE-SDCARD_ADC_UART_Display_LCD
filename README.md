@@ -92,7 +92,23 @@ Por fim, na aba "Clock Configuration", nela queremos abaixar o clock da interfac
 figura arvore de clock
 
 Assim finalizamos a configuração da plataforma. Podemos então salvar o projeto e gerar o código inicial, é possivel salvar o projeto atravéz do ícone de disquete :floppy_disk: ou pelo atalho "Ctrl+S" ou pela guia File > Save.
+
 _____________________________________________________________________________________________________________________________________________
+
+# Programação
+
+Inicialmente foi definida as variáveis de arquivo FATFS, senguinte foi criado vetores para gerenciamento dos dados juntamente com variáveis auxiliares, foi criado também uma fila de dados. A programação se dá entorno da tarefa padrão 'StartDefaultTask()' criado pelo sistema operacional FREERTOS, nesta tarefa são colocas as funções de manipulação do cartão SD, tendo como objetivo copiar os dados do arquivo .txt colocado na MicroSD, logo depois foi criado um *loop* para manipulação desses dados onde foi extraido somente os valores de ECG e colocados no vetor 'valor[]'. No *loop* principal da tarefa 'for(;;){}' cada dado de ECG é enviado para uma fila a cada 2.77777 ms.
+OBS.: como o tempo do laço de envio dos dados de ECG é uma dízima periódica e, esse tempo foi colocado no 'osDelay' onde é gerenciado por *ticks* de clock, possivelmente o valor está sendo truncado para 2ms ou arredondado para 3ms, será buscado alternativas para contornar isso e se ter a amostragem mais correta possível, qualquer novidade será atualizado aqui.
+
+Na biblioteca 'Model.ccp'é criada a backend da interface gráfica, nela temos o 'Model::tick()', função essa chamada a cada atualização de imagem, nela é visto quantos dados de ECG estão na fila e em seguida atualiza-os no gráfico dinâmico com a função 'UpdateGraph()', essa função é adicionada nas bibliotecas de visualização e apresentação.  
+_____________________________________________________________________________________________________________________________________________
+
+# Conclusão
+
+
+
+_____________________________________________________________________________________________________________________________________________
+
 
 # Materiais explicativos (Display LCD)
 - **Introdução e integração do Cube IDE com TouchGFX ->**  https://www.youtube.com/watch?v=9QDWti5RzBU  
