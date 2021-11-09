@@ -105,8 +105,9 @@ ________________________________________________________________________________
 
 # Conclusão
 
+Seguindo o processo e rodando o código é possível visualizar o ECG sendo plotados em *loop* na tela do microcontrolador, veja a figura a seguir. Alguns ajustes futuros serão considerados, como o ajuste da frequência comentado anteriormente, a legenda do eixo Y deverá ser alterada para termos de tensão, etc.
 
-
+Figura do MCU com ECG
 _____________________________________________________________________________________________________________________________________________
 
 
