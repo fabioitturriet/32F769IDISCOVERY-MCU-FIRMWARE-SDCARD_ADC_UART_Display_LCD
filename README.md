@@ -94,6 +94,7 @@ Em "middleware" vá em FREERTOS > Advanced settings e habilite "USE_NEWLIB_REENT
 Por fim, na aba "Clock Configuration", nela queremos abaixar o clock da interface SDMMC2, para isto foi mudada a divisão "/P" do PLL por 8 obtendo 50MHz no PLLQ, em seguida basta selecionar o  "PLL48CLK" no "SDMMC2 Clock Mux" para receber os 50MHz de frequência para a interface SDMMC2.
 
 <img src="https://user-images.githubusercontent.com/86391684/142877007-63d1765d-c2be-49e1-bef5-dc4cda5bb856.png" width="780" />
+<img src="https://user-images.githubusercontent.com/86391684/142879418-d6f8e87d-6a44-4dfe-944f-0eba19a9c510.png" width="230" />
 
 Assim finalizamos a configuração da plataforma. Podemos então salvar o projeto e gerar o código inicial, é possivel salvar o projeto atravéz do ícone de disquete :floppy_disk: ou pelo atalho "Ctrl+S" ou pela guia File > Save.
 
