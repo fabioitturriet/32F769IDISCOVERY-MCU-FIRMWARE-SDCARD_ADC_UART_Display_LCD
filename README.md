@@ -12,11 +12,14 @@ ________________________________________________________________________________
 
 Diagrama geral do projeto
 
-![Esquemático do experimento](https://user-images.githubusercontent.com/86391684/139781999-feda3a0a-b3cd-4eda-8291-b645a48a079f.png)
+
+<img src="https://user-images.githubusercontent.com/86391684/139781999-feda3a0a-b3cd-4eda-8291-b645a48a079f.png" width="800" />
 
 Diagrama específico do experimento
 
-![Esquemático do experimento ECG-SDCard-Display](https://user-images.githubusercontent.com/86391684/139778629-7e410274-a83a-47c3-87d7-e035e4c4c57d.png)
+
+<img src="https://user-images.githubusercontent.com/86391684/139778629-7e410274-a83a-47c3-87d7-e035e4c4c57d.png" width="800" />
+
 _____________________________________________________________________________________________________________________________________________
 
 # Abreviações
@@ -44,11 +47,12 @@ O principal elemento gráfico desse experimento é o gráfico dinâmico, nele qu
 
 o gráfico foi dispoto do seguinte modo
 
-figura
+<img src="https://user-images.githubusercontent.com/86391684/142873314-55cba5e7-04a2-4603-ac84-d2515ac3c818.png" width="750" />
 
 Nele foi deixado uma margem de 50 pixels a esqueda para a legenda sobrando 750 pixels para atualização de dados no gráfico (largura total da tela - margem = 800 - 50). Por questões de desempenho foi escolhido o grafico no modo de desenhar e sobrescrever. Como os dados tem frequência de 360Hz, foi criado uma escala para transformar a legenda em segundos, 1/360 é uma dizima periódica, logo foi arredondado para 0,0028s e a grade tem uma marcação a cada 360 amostras subtituindo por 1 segundo.
 
-figura
+<img src="https://user-images.githubusercontent.com/86391684/142873535-022d5dd0-363f-47ac-960c-42ed0cca7fe4.png" width="200" />
+
 
 ## Configuração da CubeIDE
 
@@ -85,11 +89,11 @@ A configuração do Conector SD se dá como
 
 Em "middleware" vá em FREERTOS > Advanced settings e habilite "USE_NEWLIB_REENTRANT.
 
-figura
+<img src="https://user-images.githubusercontent.com/86391684/142874044-5ad8ce4d-ee4f-4730-9dac-e3511fdd0702.png" width="700" />
 
 Por fim, na aba "Clock Configuration", nela queremos abaixar o clock da interface SDMMC2, para isto foi mudada a divisão "/P" do PLL por 8 obtendo 50MHz no PLLQ, em seguida basta selecionar o  "PLL48CLK" no "SDMMC2 Clock Mux" para receber os 50MHz de frequência para a interface SDMMC2.
 
-figura arvore de clock
+<img src="https://user-images.githubusercontent.com/86391684/142877007-63d1765d-c2be-49e1-bef5-dc4cda5bb856.png" width="780" />
 
 Assim finalizamos a configuração da plataforma. Podemos então salvar o projeto e gerar o código inicial, é possivel salvar o projeto atravéz do ícone de disquete :floppy_disk: ou pelo atalho "Ctrl+S" ou pela guia File > Save.
 
@@ -97,7 +101,7 @@ ________________________________________________________________________________
 
 # Programação
 
-Inicialmente foi definida as variáveis de arquivo FATFS, senguinte foi criado vetores para gerenciamento dos dados juntamente com variáveis auxiliares, foi criado também uma fila de dados. A programação se dá entorno da tarefa padrão 'StartDefaultTask()' criado pelo sistema operacional FREERTOS, nesta tarefa são colocas as funções de manipulação do cartão SD, tendo como objetivo copiar os dados do arquivo .txt colocado na MicroSD, logo depois foi criado um *loop* para manipulação desses dados onde foi extraido somente os valores de ECG e colocados no vetor 'valor[]'. No *loop* principal da tarefa 'for(;;){}' cada dado de ECG é enviado para uma fila a cada 2.77777 ms.
+Inicialmente foi definida as variáveis de arquivo FATFS, senguinte foi criado vetores para gerenciamento dos dados juntamente com variáveis auxiliares, foi criado também uma fila de dados. A programação se dá entorno da tarefa padrão 'StartDefaultTask()' criado pelo sistema operacional FREERTOS, nesta tarefa são colocas as funções de manipulação do cartão SD, tendo como objetivo copiar os dados do arquivo .txt colocado na MicroSD. Logo depois foi criado um *loop* para manipulação desses dados onde foi extraido somente os valores de ECG e colocados no vetor 'valor[]'. No *loop* principal da tarefa 'for(;;){}' cada dado de ECG é enviado para uma fila a cada 2.77777 ms.
 OBS.: como o tempo do laço de envio dos dados de ECG é uma dízima periódica e, esse tempo foi colocado no 'osDelay' onde é gerenciado por *ticks* de clock, possivelmente o valor está sendo truncado para 2ms ou arredondado para 3ms, será buscado alternativas para contornar isso e se ter a amostragem mais correta possível, qualquer novidade será atualizado aqui.
 
 Na biblioteca 'Model.ccp'é criada a backend da interface gráfica, nela temos o 'Model::tick()', função essa chamada a cada atualização de imagem, nela é visto quantos dados de ECG estão na fila e em seguida atualiza-os no gráfico dinâmico com a função 'UpdateGraph()', essa função é adicionada nas bibliotecas de visualização e apresentação.  
@@ -107,7 +111,8 @@ ________________________________________________________________________________
 
 Seguindo o processo e rodando o código é possível visualizar o ECG sendo plotados em *loop* na tela do microcontrolador, veja a figura a seguir. Alguns ajustes futuros serão considerados, como o ajuste da frequência comentado anteriormente, a legenda do eixo Y deverá ser alterada para termos de tensão, etc.
 
-Figura do MCU com ECG
+<img src="https://user-images.githubusercontent.com/86391684/142877669-b5a4694b-8e84-43b2-ade4-f4cf21cbdcb0.jpg" width="750" />
+
 _____________________________________________________________________________________________________________________________________________
 
 
