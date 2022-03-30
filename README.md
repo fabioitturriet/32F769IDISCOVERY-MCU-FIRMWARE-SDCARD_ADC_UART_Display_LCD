@@ -54,7 +54,7 @@ Nele foi deixado uma margem de 50 pixels a esqueda para a legenda sobrando 750 p
 <img src="https://user-images.githubusercontent.com/86391684/142873535-022d5dd0-363f-47ac-960c-42ed0cca7fe4.png" width="200" />
 
 
-## Configuração da CubeIDE
+## Configuração da CubeIDE (versão 1.0)
 
 Ao gerar o código no TouchGFX pode-se fechar o programa, no CubeIDE o próximo passo é configurar alguns dispositivos e o sistema operacional FREERTOS, basta então acessar o arquivo .ioc em "Project Explorer". 
 
@@ -100,7 +100,7 @@ Assim finalizamos a configuração da plataforma. Podemos então salvar o projet
 
 _____________________________________________________________________________________________________________________________________________
 
-# Programação
+# Programação (versão 1.0)
 
 Inicialmente foi definida as variáveis de arquivo FATFS, senguinte foi criado vetores para gerenciamento dos dados juntamente com variáveis auxiliares, foi criado também uma fila de dados. A programação se dá entorno da tarefa padrão 'StartDefaultTask()' criado pelo sistema operacional FREERTOS, nesta tarefa são colocas as funções de manipulação do cartão SD, tendo como objetivo copiar os dados do arquivo .txt colocado na MicroSD. Logo depois foi criado um *loop* para manipulação desses dados onde foi extraido somente os valores de ECG e colocados no vetor 'valor[]'. No *loop* principal da tarefa 'for(;;){}' cada dado de ECG é enviado para uma fila a cada 2.77777 ms.
 OBS.: como o tempo do laço de envio dos dados de ECG é uma dízima periódica e, esse tempo foi colocado no 'osDelay' onde é gerenciado por *ticks* de clock, possivelmente o valor está sendo truncado para 2ms ou arredondado para 3ms, será buscado alternativas para contornar isso e se ter a amostragem mais correta possível, qualquer novidade será atualizado aqui.
@@ -108,6 +108,21 @@ OBS.: como o tempo do laço de envio dos dados de ECG é uma dízima periódica 
 Na biblioteca 'Model.ccp'é criada a backend da interface gráfica, nela temos o 'Model::tick()', função essa chamada a cada atualização de imagem, nela é visto quantos dados de ECG estão na fila e em seguida atualiza-os no gráfico dinâmico com a função 'UpdateGraph()', essa função é adicionada nas bibliotecas de visualização e apresentação.  
 _____________________________________________________________________________________________________________________________________________
 
+# Atualização (versao 2.0)
+**Data:** 30/03/2022 
+**IDE=** STM32CUBE IDE v.1.9.0
+**GUI=** TouchGFX v.4.19.0
+
+_____________________________________________________________________________________________________________________________________________
+
+## Configuração da CubeIDE (versão 2.0)
+
+
+_____________________________________________________________________________________________________________________________________________
+# Programação (versão 1.0)
+
+
+_____________________________________________________________________________________________________________________________________________
 # Conclusão
 
 Seguindo o processo e rodando o código é possível visualizar o ECG sendo plotados em *loop* na tela do microcontrolador, veja a figura a seguir. Alguns ajustes futuros serão considerados, como o ajuste da frequência comentado anteriormente, a legenda do eixo Y deverá ser alterada para termos de tensão, etc.
