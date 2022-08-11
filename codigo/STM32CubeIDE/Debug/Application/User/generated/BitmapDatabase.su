@@ -1,0 +1,2 @@
+D:/TouchGFXProjects/ECG_SDCard_Display/TouchGFX/generated/images/src/BitmapDatabase.cpp:25:37:const touchgfx::Bitmap::BitmapData* BitmapDatabase::getInstance()	0	static
+D:/TouchGFXProjects/ECG_SDCard_Display/TouchGFX/generated/images/src/BitmapDatabase.cpp:30:10:uint16_t BitmapDatabase::getInstanceSize()	0	static

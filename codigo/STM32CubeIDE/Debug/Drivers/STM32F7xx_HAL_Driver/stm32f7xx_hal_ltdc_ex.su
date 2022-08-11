@@ -1,0 +1,2 @@
+D:/TouchGFXProjects/ECG_SDCard_Display/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_ltdc_ex.c:70:19:HAL_LTDCEx_StructInitFromVideoConfig	0	static
+D:/TouchGFXProjects/ECG_SDCard_Display/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_ltdc_ex.c:106:19:HAL_LTDCEx_StructInitFromAdaptedCommandConfig	0	static

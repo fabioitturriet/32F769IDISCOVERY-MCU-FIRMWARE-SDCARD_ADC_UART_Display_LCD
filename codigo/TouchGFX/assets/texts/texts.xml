@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.19.0">
+  <Languages>
+    <Language Id="GB" />
+  </Languages>
+  <Texts>
+    <TextGroup Id="Group1" />
+    <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_7A0G" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">voltar</Translation>
+      </Text>
+      <Text Id="__SingleUse_EJAI" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">&lt;&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_PUOT" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;&gt;s</Translation>
+      </Text>
+      <Text Id="__SingleUse_1G1T" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Derivações</Translation>
+      </Text>
+      <Text Id="__SingleUse_9807" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">MENU</Translation>
+      </Text>
+      <Text Id="__SingleUse_C5EN" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Iniciar</Translation>
+      </Text>
+      <Text Id="__SingleUse_AIU2" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">Eletrocardiograma</Translation>
+      </Text>
+    </TextGroup>
+  </Texts>
+  <Typographies>
+    <Typography Id="Default" Font="verdanab.ttf" Size="20" Bpp="4" Direction="LTR" FallbackCharacter="?" WidgetWildcardCharacters="-., 0123456789" />
+    <Typography Id="Large" Font="verdanab.ttf" Size="40" Bpp="4" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" Direction="LTR" FallbackCharacter="?" />
+  </Typographies>
+</TextDatabase>

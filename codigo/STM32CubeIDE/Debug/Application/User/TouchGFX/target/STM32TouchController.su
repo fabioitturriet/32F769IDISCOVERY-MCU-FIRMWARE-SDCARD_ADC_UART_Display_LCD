@@ -1,0 +1,12 @@
+../../TouchGFX/target/STM32TouchController.hpp:36:7:STM32TouchController::~STM32TouchController()	0	static
+../../TouchGFX/target/STM32TouchController.hpp:36:7:virtual STM32TouchController::~STM32TouchController()	8	static
+D:/TouchGFXProjects/ECG_SDCard_Display/TouchGFX/target/STM32TouchController.cpp:207:17:void TS_IO_Init()	0	static
+D:/TouchGFXProjects/ECG_SDCard_Display/TouchGFX/target/STM32TouchController.cpp:219:17:void TS_IO_Write(uint8_t, uint8_t, uint8_t)	32	static
+D:/TouchGFXProjects/ECG_SDCard_Display/TouchGFX/target/STM32TouchController.cpp:230:20:uint8_t TS_IO_Read(uint8_t, uint8_t)	32	static
+D:/TouchGFXProjects/ECG_SDCard_Display/TouchGFX/target/STM32TouchController.cpp:248:21:uint16_t TS_IO_ReadMultiple(uint8_t, uint8_t, uint8_t*, uint16_t)	24	static
+D:/TouchGFXProjects/ECG_SDCard_Display/TouchGFX/target/STM32TouchController.cpp:262:17:void TS_IO_WriteMultiple(uint8_t, uint8_t, uint8_t*, uint16_t)	24	static
+D:/TouchGFXProjects/ECG_SDCard_Display/TouchGFX/target/STM32TouchController.cpp:272:17:void TS_IO_Delay(uint32_t)	0	static
+D:/TouchGFXProjects/ECG_SDCard_Display/TouchGFX/target/STM32TouchController.cpp:284:20:uint8_t BSP_TS_Init(uint16_t, uint16_t)	24	static
+D:/TouchGFXProjects/ECG_SDCard_Display/TouchGFX/target/STM32TouchController.cpp:95:6:virtual void STM32TouchController::init()	8	static
+D:/TouchGFXProjects/ECG_SDCard_Display/TouchGFX/target/STM32TouchController.cpp:344:16:uint8_t BSP_TS_GetState(TS_StateTypeDef*)	56	static
+D:/TouchGFXProjects/ECG_SDCard_Display/TouchGFX/target/STM32TouchController.cpp:109:6:virtual bool STM32TouchController::sampleTouch(int32_t&, int32_t&)	32	static
